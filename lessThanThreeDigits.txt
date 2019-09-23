@@ -1,0 +1,27 @@
+def lessThanThreeDigits(a,b):
+    count=0
+    for i in range(a,b+1):
+        if(i<1000 and i!=111 and i!=222 and i!=333 and i!=444 and i!=555 and i!=666 and i!=777 and i!=888 and i!=999):
+            count=count+1
+            continue
+        if(i>1000):
+            st=str(i)
+            thisdict={}
+            flag=0
+            for j in range(len(st)):
+                if(st[j] in thisdict):
+                    thisdict[st[j]]=thisdict[st[j]]+1
+                else:
+                    thisdict[st[j]]=1
+            for k in range(len(st)):
+                if(thisdict[st[k]]>=3):
+                    flag=1
+                    continue
+            if(flag==0):
+                count=count+1
+    print(count)
+                    
+                
+
+lessThanThreeDigits(0,100000)
+        

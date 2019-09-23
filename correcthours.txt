@@ -1,0 +1,21 @@
+
+
+def correctHours(a,b,c,d):
+    lst1=[a,b,c,d]
+    lst2=[]
+    n=0
+    for i in range(len(lst1)):
+        for j in range(4):
+            for k in range(4):
+                for l in range(4):
+                    if(i!=j and j!=k and k!=l and i!=k and i!=l and j!=l and int((lst1[i])+(lst1[j]))<24 and int((lst1[k])+(lst1[l]))<60 and ((lst1[i]+lst1[j]+lst1[k]+lst1[l]) not in lst2 )):
+                        lst2.append(lst1[i]+lst1[j]+lst1[k]+lst1[l])
+                    
+    print(len(lst2))
+
+
+a=str(6)
+b=str(2)
+c=str(4)
+d=str(7)
+correctHours(a,b,c,d)
